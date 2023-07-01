@@ -1,0 +1,309 @@
+@use 'reset';
+
+li a {
+    display: block;
+}
+
+.text-red {
+    color: rgb(252, 25, 25);
+}
+
+.section-1 {
+    background-color: #eee;
+    height: 300px;
+}
+
+.s1t {
+    padding-top: 50px;
+}
+
+.t10 {
+    font-size: 15px;
+}
+
+.t9 {
+    font-size: 12px;
+}
+
+.section-2 {
+    background-color: #532F8E;
+
+}
+
+.img1 {
+    display: block;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.f-y {
+    color: #C6A163;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.f-yy {
+    color: #FFDA4D;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 2px;
+    position: relative;
+    bottom: 12px;
+}
+
+.section-3 {
+    margin-top: -1px;
+    background-color: #303030;
+    margin-bottom: -1px;
+}
+
+.section-4 {
+    background-color: #eee;
+}
+
+.btn-1 {
+    padding: 20px 50px 20px 50px;
+    color: white;
+    background-color: black;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 30px;
+    border-radius: 10px;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row div {
+    padding: 20px;
+}
+
+
+.section-5 {
+    background-color: #2F3349;
+    width: 100%;
+    height: 200px;
+    color: white;
+}
+
+.btn-2 {
+    padding: 20px 50px 20px 50px;
+    font-weight: 900;
+    color: #3C1E1E;
+    background: linear-gradient(90deg, #FFD73F, #FDC024);
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section-6 {
+    background: #21222D;
+    height: 80px;
+    color: white;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    padding: 8px 12px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    color: white;
+    position: relative;
+    left: 200px;
+}
+
+.navbar-logo i {
+    color: #d49466;
+}
+
+.navbar-logo a:hover {
+    color: white;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.navbar-menu li {
+    padding: 8px 12px;
+}
+
+.navbar-menu li:hover {
+    background-color: #d49466;
+    border-radius: 4px;
+}
+
+.navbar-menu a:hover {
+    color: white;
+}
+
+.navbar-subMenu {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    position: relative;
+    right: 200px;
+}
+
+.navbar-subMenu li {
+    padding: 8px 12px;
+}
+
+.navbar-subMenu li:hover {
+    background-color: #d49466;
+    border-radius: 4px;
+}
+
+.navbar-subMenu a:hover {
+    color: white;
+}
+
+.navbar-toggleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    color: #d49466;
+    font-size: 24px;
+}
+
+.navbar-toggleBtn:hover {
+    color: white;
+}
+
+
+// 모달창 관련 css
+.black-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    padding: 30px;
+    visibility: hidden;
+    // 이거는 모습만 숨겨줌(display none은 아예 없애는 것)
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+    z-index: 6;
+}
+
+
+.showModal {
+    visibility: visible;
+    opacity: 1;
+}
+
+// 폼 만들기 관련~
+.main-bg {
+    padding: 100px 20px;
+    background-color: lightgrey;
+}
+
+
+@media screen and (max-width:1100px) {
+    .navbar {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .navbar-logo {
+        left: 20px;
+    }
+
+    .navbar-menu {
+        visibility: hidden;
+        // display: none;
+        height: 0px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        transition: all 0.3s;
+    }
+
+    .navbar-subMenu {
+        visibility: hidden;
+        // display: none;
+        height: 0px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        right: 0px;
+        transition: all 0.3s;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+    }
+
+    .navbar-subMenu li {
+        width: 100%;
+    }
+
+    .navbar-toggleBtn {
+        display: block;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+        height: 200px;
+        visibility: visible;
+    }
+
+    .navbar-subMenu.active {
+        display: flex;
+        height: 80px;
+        visibility: visible;
+    }
+
+
+    .col-4 {
+        width: 100%;
+    }
+
+    .section-5 {
+        height: 300px;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .btn-2 {
+        position: relative;
+        bottom: 40px;
+    }
+}
